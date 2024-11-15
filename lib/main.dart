@@ -19,6 +19,19 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
+          fontFamily: 'VarelaRound',
+          bottomSheetTheme: BottomSheetThemeData(
+              showDragHandle: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(top: Radius.circular(35)),
+              ),
+              backgroundColor: AppColors.kBackgroundPurple,
+              dragHandleSize: Size(50, 5)),
+          textTheme: TextTheme(
+              bodyMedium: TextStyle(
+                  fontFamily: 'VarelaRound',
+                  fontSize: 20,
+                  color: AppColors.kWhite)),
           appBarTheme: AppBarTheme(
               titleTextStyle: TextStyle(
                   fontFamily: 'VarelaRound',
