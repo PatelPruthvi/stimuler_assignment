@@ -64,24 +64,11 @@ class _ExersiceListViewState extends State<ExersiceListView> {
               selectedColor: AppColors.kWhite,
               contentPadding:
                   const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              leading: Container(
-                width: MediaQuery.of(context).size.height * 0.08,
-                decoration: const BoxDecoration(
-                    shape: BoxShape.circle, color: AppColors.kLightGray),
-                child: Image.network(
-                  widget.exersiceList[index].imgLink,
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) {
-                      return child;
-                    } else {
-                      return Container(
-                          width: MediaQuery.of(context).size.height * 0.08,
-                          decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppColors.kLightGray));
-                    }
-                  },
-                ),
+              leading: CircleAvatar(
+                backgroundColor: AppColors.kDarkGray,
+                radius: MediaQuery.of(context).size.height * 0.04,
+                foregroundImage:
+                    NetworkImage(widget.exersiceList[index].imgLink),
               ),
               title: Text(
                 widget.exersiceList[index].title,
