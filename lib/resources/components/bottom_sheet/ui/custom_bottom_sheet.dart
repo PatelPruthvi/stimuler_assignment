@@ -3,6 +3,7 @@ import 'package:stimuler_assignment/resources/colors/colors.dart';
 import 'package:stimuler_assignment/resources/components/bottom_sheet/bloc/bottom_sheet_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stimuler_assignment/resources/utils/utils.dart';
+import 'package:stimuler_assignment/views/question_view/ui/question_view.dart';
 import '../../../../models/exersice_model.dart';
 import '../../exersice_list/exersice_list_view.dart';
 
@@ -69,6 +70,15 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                         const WidgetStatePropertyAll(
                                             AppColors.kDarkPurple)),
                                 onPressed: () {
+                                  Navigator.pop(context);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => QuestionView(
+                                            questions: widget
+                                                .exersiceList[selectedIndex]
+                                                .questions),
+                                      ));
                                 },
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
