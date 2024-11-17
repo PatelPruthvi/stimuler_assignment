@@ -109,6 +109,11 @@ class QuestionView extends StatelessWidget {
                     child: Image.network(
                       'https://avatar.iran.liara.run/public/1', // Sample image URL
                       height: 200,
+                      errorBuilder: (context, error, stackTrace) {
+                        Utils.showToast(
+                            msg: 'Unable to load image due to network issues.');
+                        return const CircleAvatar(radius: 100);
+                      },
                     ),
                   ),
                   const SizedBox(height: 20),
