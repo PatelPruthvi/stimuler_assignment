@@ -1,8 +1,10 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stimuler_assignment/resources/colors/colors.dart';
 import 'package:stimuler_assignment/resources/components/bottom_sheet/bloc/bottom_sheet_bloc.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stimuler_assignment/resources/utils/utils.dart';
+import 'package:stimuler_assignment/views/home_view/bloc/home_bloc.dart';
 import 'package:stimuler_assignment/views/question_view/ui/question_view.dart';
 import '../../../../models/exersice_model.dart';
 import '../../exersice_list/exersice_list_view.dart';
@@ -13,9 +15,11 @@ class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({
     super.key,
     required this.exersiceList,
+    required this.homeBloc,
   });
 
   final List<Exersice> exersiceList;
+  final HomeBloc homeBloc;
 
   @override
   State<CustomBottomSheet> createState() => _CustomBottomSheetState();
@@ -75,6 +79,9 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => QuestionView(
+                                            homeBloc: widget.homeBloc,
+                                            exersice: widget
+                                                .exersiceList[selectedIndex],
                                             questions: widget
                                                 .exersiceList[selectedIndex]
                                                 .questions),

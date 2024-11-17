@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:stimuler_assignment/models/exersice_model.dart';
 import 'package:stimuler_assignment/resources/colors/colors.dart';
 
+import '../../views/home_view/bloc/home_bloc.dart';
 import '../../views/question_view/bloc/question_bloc.dart';
 import '../components/bottom_sheet/ui/custom_bottom_sheet.dart';
 import '../components/bottom_sheet/ui/incorrect_answer_sheet.dart';
@@ -18,14 +19,17 @@ class Utils {
   }
 
   static showBottomSheet(
-      {required BuildContext context, required List<Exersice> exersiceList}) {
+      {required BuildContext context,
+      required List<Exersice> exersiceList,
+      required HomeBloc homeBloc}) {
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
       builder: (context) => Padding(
         padding:
             EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child: CustomBottomSheet(exersiceList: exersiceList),
+        child:
+            CustomBottomSheet(exersiceList: exersiceList, homeBloc: homeBloc),
       ),
     );
   }

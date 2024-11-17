@@ -2,14 +2,17 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:stimuler_assignment/models/question_model.dart';
+
+import '../../../models/exersice_model.dart';
+import '../../../models/question_model.dart';
 
 part 'question_event.dart';
 part 'question_state.dart';
 
 class QuestionBloc extends Bloc<QuestionEvent, QuestionState> {
+  Exersice exersice;
   List<Question> questions;
-  QuestionBloc(this.questions)
+  QuestionBloc(this.questions, this.exersice)
       : super(QuestionState.initial(questions.length)) {
     on<SelectOption>(_onSelectOption);
     on<CheckAnswer>(_onCheckAnswer);
@@ -34,7 +37,7 @@ class QuestionBloc extends Bloc<QuestionEvent, QuestionState> {
     }
   }
 
-  void _onNextQuestion(NextQuestion event, Emitter<QuestionState> emit) {
+  void _onNextQuestion(NextQuestion event, Emitter<QuestionState> emit) async {
     if (state.currentQuestionIndex < questions.length - 1) {
       int nextIndex = state.currentQuestionIndex + 1;
       double newProgress = (nextIndex) / questions.length;
@@ -46,6 +49,9 @@ class QuestionBloc extends Bloc<QuestionEvent, QuestionState> {
         progress: newProgress,
       ));
     } else {
+      exersice.isCompleted = true;
+      exersice.results.correctAnswers = state.correctAnswerCnt;
+      exersice.results.totalQuestions = questions.length;
       emit(state.copyWith(
           progress: 1,
           isAnswerChecked: false,

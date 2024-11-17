@@ -36,6 +36,7 @@ class _HomeViewState extends State<HomeView> {
                 child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: CurvedTimeline(
+                      homeBloc: homeBloc,
                       nodeCount: state.days.length,
                       days: state.days,
                       lastIndex: state.lastCompletedLesson,
@@ -51,9 +52,11 @@ class CurvedTimeline extends StatelessWidget {
   final double width;
   final double verticalSpacing;
   final int lastIndex;
+  final HomeBloc homeBloc;
   const CurvedTimeline(
       {super.key,
       required this.nodeCount,
+      required this.homeBloc,
       this.width = 300,
       this.verticalSpacing = 150,
       required this.days,
@@ -145,9 +148,17 @@ class CurvedTimeline extends StatelessWidget {
         ),
         // Nodes placed along the line
         for (int i = 0; i < nodePositions.length; i++)
-          TimelineNode(nodePositions: nodePositions, i: i, days: days),
+          TimelineNode(
+              nodePositions: nodePositions,
+              i: i,
+              days: days,
+              homeBloc: homeBloc),
         for (int i = 0; i < nodePositions.length; i++)
-          TimelineTitle(nodePositions: nodePositions, i: i, days: days),
+          TimelineTitle(
+              nodePositions: nodePositions,
+              i: i,
+              days: days,
+              homeBloc: homeBloc),
       ],
     );
   }

@@ -2,19 +2,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:simple_animation_progress_bar/simple_animation_progress_bar.dart';
+
+import 'package:stimuler_assignment/models/exersice_model.dart';
 import 'package:stimuler_assignment/resources/utils/utils.dart';
+import 'package:stimuler_assignment/views/home_view/bloc/home_bloc.dart';
 import 'package:stimuler_assignment/views/question_view/bloc/question_bloc.dart';
 
 import '../../../models/question_model.dart';
 import '../../../resources/colors/colors.dart';
 
 class QuestionView extends StatelessWidget {
+  final Exersice exersice;
   final List<Question> questions;
-  const QuestionView({super.key, required this.questions});
+  final HomeBloc homeBloc;
+  const QuestionView({
+    super.key,
+    required this.exersice,
+    required this.questions,
+    required this.homeBloc,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final QuestionBloc questionBloc = QuestionBloc(questions);
+    final QuestionBloc questionBloc = QuestionBloc(questions, exersice);
 
     return Scaffold(
       appBar: AppBar(
@@ -39,8 +49,10 @@ class QuestionView extends StatelessWidget {
                 context: context,
                 msg:
                     "You scored ${state.correctAnswerCnt} / ${questions.length}. Saving test details...");
+
             Future.delayed(const Duration(milliseconds: 1800), () {
               Navigator.pop(context);
+              homeBloc.add(HomeLastNodeUpdatedEvent());
             });
           }
         },

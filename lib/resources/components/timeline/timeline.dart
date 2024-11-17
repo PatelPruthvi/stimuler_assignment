@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:stimuler_assignment/views/home_view/bloc/home_bloc.dart';
 
 import '../../../models/day_model.dart';
-import '../../../models/exersice_model.dart';
 import '../../colors/colors.dart';
 import '../../utils/utils.dart';
 
@@ -14,11 +14,13 @@ class TimelineTitle extends StatelessWidget {
     required this.nodePositions,
     required this.i,
     required this.days,
+    required this.homeBloc,
   });
 
   final List<Offset> nodePositions;
   final int i;
   final List<DayModel> days;
+  final HomeBloc homeBloc;
 
   @override
   Widget build(BuildContext context) {
@@ -52,16 +54,17 @@ class TimelineTitle extends StatelessWidget {
 
 // timeline node
 class TimelineNode extends StatelessWidget {
-  const TimelineNode({
-    super.key,
-    required this.nodePositions,
-    required this.i,
-    required this.days,
-  });
+  const TimelineNode(
+      {super.key,
+      required this.nodePositions,
+      required this.i,
+      required this.days,
+      required this.homeBloc});
 
   final List<Offset> nodePositions;
   final int i;
   final List<DayModel> days;
+  final HomeBloc homeBloc;
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +74,11 @@ class TimelineNode extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           if (!days[i].isCompleted && (i == 0 || days[i - 1].isCompleted)) {
-            List<Exersice> exersiceList = days[i].exersices;
-            Utils.showBottomSheet(context: context, exersiceList: exersiceList);
+            // List<Exersice> exersiceList = days[i].exersices;
+            Utils.showBottomSheet(
+                context: context,
+                exersiceList: days[i].exersices,
+                homeBloc: homeBloc);
           } else if (days[i].isCompleted) {
             Utils.showSnackBar(
                 msg: "You have already completed this exersice...",
