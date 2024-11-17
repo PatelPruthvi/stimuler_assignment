@@ -48,7 +48,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Participle Adjectives",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/2",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -73,7 +73,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Order of Adjectives",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/3",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question": "She purchased a _ briefcase for her new job.",
@@ -110,7 +110,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Adverbs of Manner in Complex Sentences",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/4",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -140,7 +140,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Comparative and Superlative Adverbs",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/5",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -189,7 +189,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Correlative Conjunctions",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/6",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -219,7 +219,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Subordinating Conjunctions in Academic Context",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/7",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -247,7 +247,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Scientific and Academic Prefixes",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/8",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -267,7 +267,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Advanced Suffixes in Technical Context",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/9",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -300,7 +300,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Inverted Sentence Structures",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/10",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -325,7 +325,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Parallel Structure in Complex Sentences",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/11",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -358,7 +358,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Perfect Progressive Tenses",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/12",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -388,7 +388,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Modal Perfect Verbs",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/13",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":
@@ -418,7 +418,7 @@ List<Map<String, dynamic>> daysData = [
         "title": "Subjunctive Mood",
         "isCompleted": false,
         "imgLink": "https://avatar.iran.liara.run/public/14",
-        "results": null,
+        "results": {"totalQuestions": null, "correctAnswers": null},
         "questions": [
           {
             "question":

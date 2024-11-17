@@ -1,6 +1,6 @@
 class Results {
-  int totalQuestions;
-  int correctAnswers;
+  int? totalQuestions;
+  int? correctAnswers;
 
   Results({required this.totalQuestions, required this.correctAnswers});
 
