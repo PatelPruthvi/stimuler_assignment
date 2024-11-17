@@ -74,9 +74,9 @@ class _ExersiceListViewState extends State<ExersiceListView> {
                 widget.exersiceList[index].title,
                 style: Theme.of(context).primaryTextTheme.bodyMedium,
               ),
-              trailing: widget.exersiceList[index].results != null
+              trailing: widget.exersiceList[index].isCompleted
                   ? Text(
-                      "${widget.exersiceList[index].results!.correctAnswers} / ${widget.exersiceList[index].results!.totalQuestions}",
+                      "${widget.exersiceList[index].results.correctAnswers} / ${widget.exersiceList[index].results.totalQuestions}",
                       style: const TextStyle(
                           fontFamily: 'VarelaRound',
                           fontWeight: FontWeight.bold,
